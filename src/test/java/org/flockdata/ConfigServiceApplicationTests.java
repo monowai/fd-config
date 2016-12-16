@@ -3,14 +3,12 @@ package org.flockdata;
 import org.flockdata.fdconfig.FdConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.IntegrationTest;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.TestRestTemplate;
+import org.springframework.boot.context.embedded.LocalServerPort;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
@@ -18,14 +16,13 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = FdConfig.class)
-@WebAppConfiguration
-@IntegrationTest("server.port=0")
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = FdConfig.class,
+        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ConfigServiceApplicationTests {
 
-	@Value("${local.server.port}")
-	private int port = 0;
+    @LocalServerPort
+    private int port;
 
 	@Test
 	public void configurationAvailable() {
