@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.flockdata</groupId>
@@ -7,7 +7,7 @@
     <packaging>jar</packaging>
 
     <name>fd-config</name>
-    <version>0.98.3</version>
+    <version>0.98.4-SNAPSHOT</version>
     <description>Configuration service for FlockData</description>
 
     <properties>
@@ -123,8 +123,8 @@
     <scm>
         <connection>scm:git:https://github.com/monowai/fd-config</connection>
         <developerConnection>scm:git:https://github.com/monowai/fd-config</developerConnection>
-        <url>https://github.com/monowai/flockdata.org</url>
-        <tag>v0.98.3</tag>
+        <url>https://github.com/monowai/fd-config</url>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
